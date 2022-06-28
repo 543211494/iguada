@@ -1,0 +1,21 @@
+<!--pages/messageBoard2/messageBoard2.wxml-->
+<view class="choice-container clearfix">
+  <text class="choice-text choiced" wx:if="{{type==1}}">失物寻主</text>
+  <text class="choice-text not-choiced" wx:else bindtap="choose" data-type="{{1}}">失物寻主</text>
+  <text class="choice-text choiced" wx:if="{{type==2}}">寻物启事</text>
+  <text class="choice-text not-choiced" wx:else bindtap="choose" data-type="{{2}}">寻物启事</text>
+  <text class="choice-text choiced" wx:if="{{type==3}}">乘车意见</text>
+  <text class="choice-text not-choiced" wx:else bindtap="choose" data-type="{{3}}">乘车意见</text>
+  <text class="choice-text choiced" wx:if="{{type==4}}">其他..</text>
+  <text class="choice-text not-choiced" wx:else bindtap="choose" data-type="{{4}}">其他..</text>
+</view>
+<view class="tip" wx:if="{{messages.length==0}}">暂无留言</view>
+<view class="notice-item" wx:for="{{messages}}" wx:key="id" wx:for-item="message">
+  <view class="notice-info-title clearfix">
+    <text class="notice-info-title-text">留言类型:{{title[type-1]}}</text>
+  </view>
+  <view class="line"></view>
+  <view class="notice-info-content">
+    <text class="notice-info-content-text">{{message.content}}</text>
+  </view>
+</view>

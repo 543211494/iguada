@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nwpu.i_gua_da.mapper.TestMapper">
+    <resultMap id="testEntity" type="org.nwpu.i_gua_da.entity.TestEntity">
+        <id property="id" column="id"/>
+    </resultMap>
+    
+    <select id="testSelect" resultMap="testEntity">
+        SELECT * FROM test_entity ORDER BY datetime DESC limit 1
+    </select>
+
+    <insert id="testInsert" parameterType="org.nwpu.i_gua_da.entity.TestEntity">
+        INSERT INTO test_entity (content1, content2, datetime) VALUES (#{content1}, #{content2}, #{datetime})
+    </insert>
+</mapper>

@@ -1,0 +1,63 @@
+#pagehelper分页插件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+constants:
+  user:
+    permission:
+      default: 1
+      admin: 2
+      common: 1
+    status:
+      default: 1
+      isDelete: 2
+      notDelete: 1
+    length:
+      name: 20
+      password: 20
+      email: 40
+      studentNumber: 20
+  notice:
+    length:
+      title: 65535
+      content: 65535
+    status:
+      default: 1
+      isDelete: 2
+      notDelete: 1
+  station:
+    length:
+      stationName: 65535
+      campus: 65535
+    status:
+      default: 1
+      isDelete: 2
+      notDelete: 1
+  schedule:
+    status:
+      default: 1
+      isDelete: 2
+      notDelete: 1
+    totalSeat:
+      default: 50
+  reserve:
+    status:
+      default: 1
+      isDelete: 2
+      notDelete: 1
+  verificationCode:
+    length: 6
+  wxlogin:
+    appid: wx407a31f1ca53a599
+    secret: ea9c64ba779a4c117d071722088afa0e
+  message:
+    length:
+      content: 65535
+    type:
+      default: 1
+redisKey:
+  station: Station
+  lastSeat: LastSeat
+  verificationCode: VerificationCode

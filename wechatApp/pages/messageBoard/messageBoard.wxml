@@ -1,0 +1,17 @@
+<!--pages/messageBoard/messageBoard.wxml-->
+<view class="choice-container clearfix">
+  <text class="choice-text choiced" wx:if="{{type==1}}">失物寻主</text>
+  <text class="choice-text not-choiced" wx:else bindtap="choose" data-type="{{1}}">失物寻主</text>
+  <text class="choice-text choiced" wx:if="{{type==2}}">寻物启事</text>
+  <text class="choice-text not-choiced" wx:else bindtap="choose" data-type="{{2}}">寻物启事</text>
+  <text class="choice-text choiced" wx:if="{{type==3}}">乘车意见</text>
+  <text class="choice-text not-choiced" wx:else bindtap="choose" data-type="{{3}}">乘车意见</text>
+  <text class="choice-text choiced" wx:if="{{type==4}}">其他..</text>
+  <text class="choice-text not-choiced" wx:else bindtap="choose" data-type="{{4}}">其他..</text>
+</view>
+<view class="input-container">
+  <textarea class="input" bindinput="updateInput" confirm-type="done" maxlength="{{-1}}"></textarea>
+</view>
+<view class="submit" bindtap="submit">
+  <text class="submit-text">提交</text>
+</view>
